@@ -3,9 +3,11 @@ import React from 'react';
 class Pages extends React.Component {
 
     paginate() {
-        let numOfPages = this.props.numOfImages / 10;
-        let pageNums = [];
-        let currentPage = this.props.currentPage;
+        // Would this work?
+        const numOfPages = this.props.numOfImages / 10;
+        const pageNums = [];
+        const currentPage = this.props.currentPage;
+
         for(let page = 1; page < numOfPages + 1; page++) {
             pageNums.push(
                 <div className={page !== currentPage ? 'activePageNumber pageNumber' : 'inactivePageNumber pageNumber'} key={page} onClick={() => this.props.pageClick(page)}>{page}</div>
